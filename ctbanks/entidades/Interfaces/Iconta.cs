@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ctBank.Interfaces
+namespace ctbanks.entidades.Interfaces
 {
     public interface Iconta
     {
