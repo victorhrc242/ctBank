@@ -9,6 +9,7 @@ namespace ctBank.entidades
 {
     public class conta:Iconta
     {
+        public int id { get; set; }
         public string Titular { get; set; }
         public double Saldo { get; set; }
         // depositar

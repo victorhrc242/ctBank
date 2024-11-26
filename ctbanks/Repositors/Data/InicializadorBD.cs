@@ -13,7 +13,7 @@ public class InicializadorBD
 
             // Criar tabela Conta
             string commandoSQL = @"
-            CREATE TABLE IF NOT EXISTS Conta (
+            CREATE TABLE IF NOT EXISTS Contas (
                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
                 Titular TEXT NOT NULL,
                 Saldo DOUBLE NOT NULL
@@ -23,7 +23,7 @@ public class InicializadorBD
 
             // Criar tabela ContaCorrente
             commandoSQL = @"
-            CREATE TABLE IF NOT EXISTS ContaCorrente (
+            CREATE TABLE IF NOT EXISTS ContaCorrentes (
                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
                 LimiteDeCredito DOUBLE NOT NULL,
                 IdConta INTEGER,
@@ -34,7 +34,7 @@ public class InicializadorBD
 
             // Criar tabela ContaPoupanca
             commandoSQL = @"
-            CREATE TABLE IF NOT EXISTS ContaPoupanca (
+            CREATE TABLE IF NOT EXISTS ContaPoupancas (
                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
                 TaxaDeJuros DOUBLE NOT NULL,
                 IdConta INTEGER,

@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace ctbanks.Repositors.DTO
 {
-    [Table("ContaCorrente")]
+    [Table("ContaCorrentes")]
     public class contacorrenteDTO
     {
         
         public int id { get; set; }
-     public string LimiteDeCredito { get; set; }
+     public double LimiteDeCredito { get; set; }
         public  int IdConta { get; set; }
     }
 }

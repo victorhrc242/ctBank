@@ -1,4 +1,6 @@
 ﻿using ctBank.entidades;
+using ctbanks.entidades.Interfaces;
+using ctbanks.Repositors.Interfaces;
 using Dapper;
 using Dapper.Contrib.Extensions;
 using Microsoft.Extensions.Configuration;
@@ -11,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace ctbanks.Repositors
 {
-    public class Contarepositor
+    public class Contarepositor:Icontas
     {
         private readonly string ConnectionString;
         public Contarepositor(IConfiguration configuration)

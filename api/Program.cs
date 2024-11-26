@@ -1,16 +1,23 @@
+using ctbanks.Repositors;
+using ctbanks.Repositors.Interfaces;
+using ctbanks.service;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Aprenda mais sobre configurar o Swagger/OpenAPI em https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 InicializadorBD.Inicializar();
 
+builder.Services.AddScoped<IContapoupanca, contapoupaçarepositor>();
+builder.Services.AddScoped<Icontapoupancaservice, contaservicepoupanca>();
+builder.Services.AddScoped<Icontacorrente, contacorrenterepositor>();
+builder.Services.AddScoped<Icontacorrentservice, contacrrentservice>();
+builder.Services.AddScoped<Icontas, Contarepositor>();
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

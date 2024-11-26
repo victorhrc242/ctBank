@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ctbanks.Repositors.DTO
 {
-    [Table("ContaPoupanca")]
+    [Table("ContaPoupancas")]
     public class contapopancaDTO
     {
       public double TaxaDeJuros { get; set; }

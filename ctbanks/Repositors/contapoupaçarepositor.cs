@@ -1,5 +1,6 @@
 ﻿using ctBank.entidades;
 using ctbanks.Repositors.DTO;
+using ctbanks.Repositors.Interfaces;
 using Dapper;
 using Dapper.Contrib.Extensions;
 using Microsoft.Extensions.Configuration;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace ctbanks.Repositors
 {
-    public class contapoupaçarepositor
+    public class contapoupaçarepositor:IContapoupanca
     {
         private readonly string ConnectionString;
         public contapoupaçarepositor(IConfiguration configuration)
@@ -31,12 +32,12 @@ namespace ctbanks.Repositors
             connection.Delete<ContaPoupanca>(carro);
         }
 
-        public ContaPoupanca BuscarPorVeiculoId(int veiculoId)
+        public ContaPoupanca BuscarPorVeiculoId(int IdConta)
         {
 
             using var connection = new SQLiteConnection(ConnectionString);
-            string query = "SELECT * FROM Carros WHERE VeiculoId = @VeiculoId";
-            return connection.QueryFirstOrDefault<ContaPoupanca>(query, new { VeiculoId = veiculoId });
+            string query = "SELECT * FROM ContaPoupancas WHERE IdConta = @IdConta";
+            return connection.QueryFirstOrDefault<ContaPoupanca>(query, new { IdConta = IdConta });
 
         }
         public List<ContaPoupanca> Listar()
